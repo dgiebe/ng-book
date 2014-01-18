@@ -1,0 +1,44 @@
+<div class="row">
+	<h1>Update your settings</h1>
+	<form name="form" ng-submit="updateSettings()">
+		<fieldset>
+			<legend>Update Settings</legend>
+			<div class="row">
+				<div class="small-8 columns">
+					<label for="">Name</label>
+					<input type="text" name="name" placeholder="Name" ng-model="settings.name" ng-minlength="3" ng-maxlength="20" ng-pattern="/^[a-zA-Z]+$/" required>
+					<div ng-show="form.name.$dirty && form.name.$invalid">
+						<div ng-show="form.name.$error.required"> Your Name is required.</div>
+						<div ng-show="form.name.$error.minlength">Your Name must be greater than 3 characters.</div>
+						<div ng-show="form.name.$error.maxlength">Your Name cannot be greater than 20 characters.</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-8 columns">
+					<label for="">Email</label>
+					<input type="email" name="email" placeholder="Email" ng-model="settings.email">
+					<div ng-show="form.email.$dirty && form.email.$invalid">
+						<div ng-show="form.email.$error.email"> That is not a valid Email.</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-8 columns">
+					<label for="">Age</label>
+					<input type="number" name="age" placeholder="Age" ng-model="settings.age" min="12" max="199">
+					<div ng-show="form.age.$dirty && form.age.$invalid">
+						<div ng-show="form.age.$error.min">Sorry too young.</div>
+						<div ng-show="form.age.$error.max">You are 200 or older? Really?</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="push-9 small-3">
+					<button type="submit" class="button" ng-disabled="form.$dirty && form.$invalid">Update</button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>

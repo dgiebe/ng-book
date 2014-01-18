@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Simple App</title>	
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/foundation.min.css">
+		<link rel="stylesheet" href="css/app.css">
+
+	</head>
+	<body>
+		<nav class="top-bar">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="">Mail</a></h1>
+				</li>
+			</ul>
+			<section class="top-bar-section">
+				<ul class="right">
+					<li ng-show="loading">Loading</li>
+					<li><a href="#/">Home</a></li>
+					<li><a href="#/settings">Settings</a></li>
+				</ul>
+			</section>
+		</nav>
+		<div ng-view></div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
